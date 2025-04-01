@@ -14,3 +14,4 @@ CMakeUserPresets.json
 # Wyrradia
 build/
 .cache/
+deploy_client.sh
