@@ -2,5 +2,5 @@
 
 mkdir -p server/build/
 cd server/build
-cmake ..
-&& cmake --build .
+cmake .. &&
+  cmake --build .

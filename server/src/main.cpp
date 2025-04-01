@@ -1,7 +1,10 @@
-#include <iostream>
+// Copyright 2025 Andreas Åkerberg
 
-int main(int argc, char** argv) {
-  std::cout << "Yrradia\n";
+#include "Theme0/RunNewTheme0.hpp"
+
+int main(int argc, char** argv)
+{
+  Wyrradia::RunNewTheme0();
 
   return 0;
 }

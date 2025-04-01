@@ -34,4 +34,7 @@ target_precompile_headers(Wyrradia
         <vector>
  #       <functional>
 
+        external/cpp-httplib/httplib.h
+
+        src/Common/Singleton.hpp
 )
