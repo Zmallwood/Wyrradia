@@ -1,11 +1,13 @@
 // Copyright 2025 Andreas Åkerberg
 // See LICENSE for license details.
 
-#include "Theme0/RunNewTheme0.hpp"
+#include "Server/Server.hpp"
 
 int main(int argc, char** argv)
 {
-  Wyrradia::RunNewTheme0();
+  using namespace Wyrradia;
+
+  _<Server>().Start();
 
   return 0;
 }

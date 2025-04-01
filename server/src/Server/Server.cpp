@@ -2,9 +2,15 @@
 // See LICENSE for license details.
 
 #include "Server.hpp"
+#include "Session/Session.hpp"
 
 namespace Wyrradia
 {
+  Server::Server()
+  {
+    m_sessions.push_back(std::make_shared<Session>());
+  }
+
   void Server::Start()
   {
     httplib::Server svr;
@@ -14,12 +20,8 @@ namespace Wyrradia
     *
     */
 
-    svr.Get("/hello",
-        [](const httplib::Request& req, httplib::Response& res)
-        { res.set_content("Hello, world!", "text/plain"); });
-
     // Define another endpoint that takes a name as a query parameter
-    svr.Get("/greet",
+    /*svr.Get("/greet",
         [](const httplib::Request& req, httplib::Response& res)
         {
           std::string name = req.get_param_value("name");
@@ -31,7 +33,7 @@ namespace Wyrradia
           {
             res.set_content("Hello, " + name + "!", "text/plain");
           }
-        });
+        });*/
 
     svr.Get("/game_state",
         [](const httplib::Request& req, httplib::Response& res)
@@ -43,8 +45,12 @@ namespace Wyrradia
           res.set_header("Access-Control-Allow-Origin", "*");
         });
 
-    std::cout << "Server running at http://localhost:8080"
-              << std::endl;
+    std::cout << "Server running at http://localhost:8080\n";
     svr.listen("localhost", 8080);
+  }
+
+  std::shared_ptr<Session> Server::GetDefaultSession() const
+  {
+    return m_sessions[0];
   }
 } // namespace Wyrradia
