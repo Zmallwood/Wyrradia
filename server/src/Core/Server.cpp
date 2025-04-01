@@ -1,4 +1,5 @@
 // Copyright 2025 Andreas Åkerberg
+// See LICENSE for license details.
 
 #include "Server.hpp"
 
