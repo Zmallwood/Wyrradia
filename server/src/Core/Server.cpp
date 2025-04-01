@@ -9,6 +9,11 @@ namespace Wyrradia
   {
     httplib::Server svr;
 
+    /*
+    * TODO: Use long polling instttead of websockets.
+    *
+    */
+
     svr.Get("/hello",
         [](const httplib::Request& req, httplib::Response& res)
         { res.set_content("Hello, world!", "text/plain"); });
