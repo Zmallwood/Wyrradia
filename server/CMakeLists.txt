@@ -21,20 +21,9 @@ ELSE()
     )
 ENDIF()
 
-target_include_directories(Wyrradia PUBLIC "src")
+target_include_directories(Wyrradia PUBLIC "src" "external")
 
 target_precompile_headers(Wyrradia
     PRIVATE
-        <iostream>
-        <map>
-        <memory>
- #       <filesystem>
- #       <algorithm>
- #       <set>
-        <vector>
- #       <functional>
-
-        external/cpp-httplib/httplib.h
-
-        src/Common/Singleton.hpp
+        src/StdAfx/StdAfx.hpp
 )

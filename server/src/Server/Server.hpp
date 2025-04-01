@@ -14,9 +14,12 @@ namespace Wyrradia
 
     void Start();
 
+    void Stop();
+
    private:
     std::shared_ptr<Session> GetDefaultSession() const;
 
+    bool m_running { true };
     std::vector<std::shared_ptr<Session>> m_sessions;
   };
 } // namespace Wyrradia
